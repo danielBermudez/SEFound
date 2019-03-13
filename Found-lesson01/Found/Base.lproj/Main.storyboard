@@ -21,23 +21,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4C2-Qn-VRl">
-                                <rect key="frame" x="115" y="75" width="144" height="30"/>
-                                <state key="normal" title="Open maps with URL"/>
-                                <connections>
-                                    <action selector="openMapsWithURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LsR-6f-imV"/>
-                                </connections>
-                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-Qh-bTH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4C2-Qn-VRl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="GXY-5S-saT"/>
-                            <constraint firstItem="4C2-Qn-VRl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nRk-KP-ncl"/>
+                            <constraint firstItem="Pah-Qh-bTH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CQ2-Lx-wCf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pah-Qh-bTH" secondAttribute="bottom" id="V5c-hp-vmV"/>
+                            <constraint firstItem="Pah-Qh-bTH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YO6-tY-T3i"/>
+                            <constraint firstAttribute="trailing" secondItem="Pah-Qh-bTH" secondAttribute="trailing" id="cnD-hh-Gq1"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

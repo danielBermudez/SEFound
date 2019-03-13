@@ -19,11 +19,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func openMapsWithURL(_ sender: UIButton) {
-        if let url = URL(string: "http://maps.apple.com/?q=Yosemite"){
-            let app = UIApplication.shared
-            app.open(url, options: [:], completionHandler: nil)
-        }
-    }
 }
-
