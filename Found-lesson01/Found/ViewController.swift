@@ -12,6 +12,11 @@ import MapKit
 class ViewController: UIViewController, MKMapViewDelegate{
     let locationManager = CLLocationManager()
 
+    @IBAction func dropPin(_ sender: UIBarButtonItem) {// drop pin at current location
+        let pin = Pin(coordinate: mapView.userLocation.coordinate)
+        mapView.addAnnotation(pin)
+        
+    }
     @IBOutlet weak var mapView: MKMapView!
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
@@ -36,3 +41,4 @@ class ViewController: UIViewController, MKMapViewDelegate{
     }
 
 }
+

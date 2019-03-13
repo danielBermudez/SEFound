@@ -27,12 +27,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="tWe-Id-8cs"/>
                                 </connections>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riW-z3-hL0">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Add" id="VVq-es-8hh">
+                                        <connections>
+                                            <action selector="dropPin:" destination="BYZ-38-t0r" id="kDn-Fa-jO3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Pah-Qh-bTH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CQ2-Lx-wCf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pah-Qh-bTH" secondAttribute="bottom" id="V5c-hp-vmV"/>
+                            <constraint firstItem="riW-z3-hL0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GXS-I5-ftC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="riW-z3-hL0" secondAttribute="bottom" id="Vg1-6h-jFR"/>
                             <constraint firstItem="Pah-Qh-bTH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YO6-tY-T3i"/>
+                            <constraint firstItem="riW-z3-hL0" firstAttribute="top" secondItem="Pah-Qh-bTH" secondAttribute="bottom" constant="-44" id="ZJA-wb-J4G"/>
+                            <constraint firstItem="riW-z3-hL0" firstAttribute="leading" secondItem="Pah-Qh-bTH" secondAttribute="leading" id="bpE-3x-56q"/>
                             <constraint firstAttribute="trailing" secondItem="Pah-Qh-bTH" secondAttribute="trailing" id="cnD-hh-Gq1"/>
                         </constraints>
                     </view>
