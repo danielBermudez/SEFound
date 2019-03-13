@@ -14,8 +14,20 @@ class ViewController: UIViewController, MKMapViewDelegate{
 
     @IBAction func dropPin(_ sender: UIBarButtonItem) {// drop pin at current location
         let pin = Pin(coordinate: mapView.userLocation.coordinate)
-        mapView.addAnnotation(pin)
         
+        let alert = UIAlertController(title: "Naming Pin", message: "Please put a name to the pin:", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.text = "Name Your Pin"
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            pin.title = textField?.text
+
+        }))
+        self.present(alert, animated: true, completion: nil)
+        mapView.addAnnotation(pin)
+
     }
     @IBOutlet weak var mapView: MKMapView!
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
