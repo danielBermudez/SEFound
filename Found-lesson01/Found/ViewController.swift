@@ -16,10 +16,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+   mapView.mapType = .hybrid
+        if CLLocationManager.locationServicesEnabled(){
+            mapView.showsUserLocation = true  }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         locationManager.requestWhenInUseAuthorization()
+    
        
     }
   override func didReceiveMemoryWarning() {
