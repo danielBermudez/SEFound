@@ -6,15 +6,23 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 */
 
 import UIKit
+import CoreLocation
+import MapKit
 
 class ViewController: UIViewController {
+    let locationManager = CLLocationManager()
 
+    @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    override func didReceiveMemoryWarning() {
+    override func viewWillAppear(_ animated: Bool) {
+        locationManager.requestWhenInUseAuthorization()
+       
+    }
+  override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
