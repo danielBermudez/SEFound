@@ -15,9 +15,8 @@ class ViewController: UIViewController, MKMapViewDelegate{
     @IBOutlet weak var mapView: MKMapView!
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        let width = 1000.0
-        let height = 1000.0
-        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: width, longitudinalMeters: height)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: true)
         
     }
