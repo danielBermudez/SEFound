@@ -6,12 +6,18 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 */
 
 import UIKit
-
+import MapKit
 class ViewController: UIViewController {
-
+    var window : UIWindow?
+    var mapView : MKMapView?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.view.backgroundColor = UIColor.white
+        
+        self.mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: (self.window?.frame.width)!, height: (self.window?.frame.height)!))
+        self.view.addSubview(self.mapView!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -19,11 +25,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func openMapsWithURL(_ sender: UIButton) {
-        if let url = URL(string: "http://maps.apple.com/?q=Yosemite"){
-            let app = UIApplication.shared
-            app.open(url, options: [:], completionHandler: nil)
-        }
-    }
+    
 }
 
