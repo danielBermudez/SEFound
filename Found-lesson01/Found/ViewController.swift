@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openMapsWithURL(_ sender: UIButton) {
-        if let url = URL(string: "http://maps.apple.com/?q=Yosemite"){
+        if let url = URL(string: "http://maps.apple.com/?near=Yosemite"){
             let app = UIApplication.shared
             app.open(url, options: [:], completionHandler: nil)
         }
