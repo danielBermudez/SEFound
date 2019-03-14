@@ -35,6 +35,16 @@
                                             <action selector="dropPin:" destination="BYZ-38-t0r" id="kDn-Fa-jO3"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" id="SV4-28-vVy">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z7O-5I-5bg">
+                                            <rect key="frame" x="58" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Clear"/>
+                                            <connections>
+                                                <action selector="clearAnnotations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cat-cs-0Gm"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

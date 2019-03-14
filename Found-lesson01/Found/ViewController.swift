@@ -11,7 +11,7 @@ import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate{
     let locationManager = CLLocationManager()
-
+    var createdPins =  [Pin]()
     @IBAction func dropPin(_ sender: UIBarButtonItem) {// drop pin at current location
         let pin = Pin(coordinate: mapView.userLocation.coordinate)
         
@@ -26,9 +26,21 @@ class ViewController: UIViewController, MKMapViewDelegate{
 
         }))
         self.present(alert, animated: true, completion: nil)
+        createdPins.append(pin)
         mapView.addAnnotation(pin)
 
     }
+    
+    @IBAction func clearAnnotations(_ sender: UIButton) {
+        mapView.removeAnnotations(createdPins)
+    }
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let item = [view.annotation]
+        let shareView = UIActivityViewController(activityItems: item, applicationActivities: nil)
+        
+        present(shareView, animated: true)
+    }
+    
     @IBOutlet weak var mapView: MKMapView!
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
